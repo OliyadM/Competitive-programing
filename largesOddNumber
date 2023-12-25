@@ -1,0 +1,13 @@
+class Solution(object):
+    def largestOddNumber(self, num):
+        largest_odd = 0
+
+        for i in range(len(num) - 1, -1, -1):
+            if int(num[i]) % 2 != 0:
+                largest_odd = int(num[:i + 1])
+                break
+
+        if largest_odd > 0:
+            return str(largest_odd)
+        else:
+            return ""
